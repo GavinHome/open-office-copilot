@@ -11,12 +11,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "MOCK=false webpack serve --config webpack.dev.config.js --name sally-chat",
     "mock": "MOCK=true webpack serve --config webpack.dev.config.js --name sally-chat",
-    "build": "NODE_ENV=production node ./script/build-cdn.mjs",
-    "build:dev": "NODE_ENV=development node ./script/build-cdn.mjs",
-    "cdn": "NODE_ENV=production node ./script/build-cdn.mjs",
-    "push": "NODE_ENV=production npm run build && git commit -am release && git push",
-    "push:dev": "NODE_ENV=production npm run build:dev && git commit -am 'release test' && git push",
-    "push:test": "NODE_ENV=test npm run build && git commit -am release && git push"
+    "build": "cross-env NODE_ENV=production node ./script/build-cdn.mjs",
+    "build:dev": "cross-env NODE_ENV=development node ./script/build-cdn.mjs",
+    "cdn": "cross-env NODE_ENV=production node ./script/build-cdn.mjs",
+    "push": "cross-env NODE_ENV=production npm run build && git commit -am release && git push",
+    "push:dev": "cross-env NODE_ENV=production npm run build:dev && git commit -am 'release test' && git push",
+    "push:test": "cross-env NODE_ENV=test npm run build && git commit -am release && git push"
   },
   "repository": {
     "type": "git",
@@ -83,6 +83,7 @@
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.8.0",
