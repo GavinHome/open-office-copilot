@@ -43,7 +43,7 @@ module.exports = async (env, options) => {
       // profile: ["./src/profile/index.tsx"],
       commands: "./src/commands/index.tsx",
       doc_commands: "./src/doc-commands/index.tsx",
-      functions: "./src/functions/functions.ts",
+      functions: "./src/functions/index.tsx",
     },
     output: {
       path: path.resolve(__dirname, `dist`),
@@ -191,7 +191,7 @@ module.exports = async (env, options) => {
     plugins: [
       new CustomFunctionsMetadataPlugin({
         output: "functions.json",
-        input: "./src/functions/functions.ts",
+        input: "./src/functions/index.tsx",
       }),
       new CopyWebpackPlugin({
         patterns: [
