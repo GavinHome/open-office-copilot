@@ -10,6 +10,9 @@ RUN apk add --no-cache python3 py3-pip py3-setuptools make g++
 # Copy package-related files
 COPY package*.json ./
 
+# Configure Node.js memory limit
+ENV NODE_OPTIONS="--max-old-space-size=8192"
+
 # Configure the enterprise internal NPM source (if applicable)
 # RUN npm config set registry http://your-internal-npm-registry
 
