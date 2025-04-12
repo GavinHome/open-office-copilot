@@ -41,7 +41,7 @@ module.exports = async (env, options) => {
       // codeedit: ["./src/code-edit/index.tsx"],
       // chartedit: ["./src/chart-edit/index.tsx"],
       // profile: ["./src/profile/index.tsx"],
-      commands: "./src/commands/index.tsx",
+      // commands: "./src/commands/index.tsx",  //todo: 不存在这个目录
       doc_commands: "./src/doc-commands/index.tsx",
       functions: "./src/functions/index.tsx",
     },
@@ -267,7 +267,7 @@ module.exports = async (env, options) => {
       // }),
       new HtmlWebpackPlugin({
         filename: "functions.html",
-        template: "./src/functions/functions.html",
+        template: "./src/functions/index.html",
         chunks: ["polyfill", "functions"],
         hash: true,
       }),
@@ -276,11 +276,12 @@ module.exports = async (env, options) => {
         template: "./src/doc-commands/index.html",
         chunks: ["doc_commands"],
       }),
-      new HtmlWebpackPlugin({
-        filename: "commands.html",
-        template: "./src/commands/index.html",
-        chunks: ["commands"],
-      }),
+      //todo: 不存在这个目录
+      // new HtmlWebpackPlugin({
+      //   filename: "commands.html",
+      //   template: "./src/commands/index.html",
+      //   chunks: ["commands"],
+      // }),
       new FileManagerPlugin({
         events: {
           onEnd: {
