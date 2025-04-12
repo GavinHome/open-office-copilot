@@ -132,3 +132,9 @@ dist
 .DS_Store
 
 /sally-cdn
+
+# Build outputs
+**/dist/**
+
+# Public assets
+web-server/public/**
