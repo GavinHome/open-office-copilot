@@ -109,7 +109,7 @@ module.exports = async (env, options) => {
       alias: {
         "@api": path.resolve(__dirname, "src/_share/api"),
         // '@share': path.resolve(__dirname, 'static/_share'),
-        // 'chat-list': path.resolve(__dirname, '../packages/chat-list'),
+        'chat-list': path.resolve(__dirname, '../packages/chat-list'),
         "@codemirror/state": "chat-list/node_modules/@codemirror/state",
       },
     },
