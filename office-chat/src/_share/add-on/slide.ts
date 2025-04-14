@@ -166,7 +166,7 @@ export const registSelectEvent = (callback: (text: string) => void) => {
             callback('');
         }
     }
-    Office.context.document.addHandlerAsync(Office.EventType.DocumentSelectionChanged, handler);
+    Office.context?.document?.addHandlerAsync(Office.EventType.DocumentSelectionChanged, handler);
 
     // Office.context.document.addHandlerAsync(Office.EventType.DocumentSelectionChanged, async function (eventArgs) {
     //     // 处理文档选择文本事件
